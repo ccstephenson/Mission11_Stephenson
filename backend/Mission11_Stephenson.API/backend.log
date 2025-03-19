@@ -18,7 +18,7 @@ info: Microsoft.Hosting.Lifetime[0]
 info: Microsoft.Hosting.Lifetime[0]
       Content root path: /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (3ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (5ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
       SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
       FROM "Books" AS "b"
       ORDER BY "b"."Title"
@@ -29,6 +29,56 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       FROM "Books" AS "b"
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_0 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
       SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
       FROM "Books" AS "b"
       ORDER BY "b"."Title"
@@ -48,11 +98,11 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       SELECT COUNT(*)
       FROM "Books" AS "b"
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
       SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
       FROM "Books" AS "b"
-      ORDER BY "b"."Title"
-      LIMIT @__p_1 OFFSET @__p_0
+      ORDER BY "b"."Title" DESC
+      LIMIT @__p_0 OFFSET @__p_0
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
       SELECT COUNT(*)
@@ -62,16 +112,6 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
       FROM "Books" AS "b"
       ORDER BY "b"."Title" DESC
-      LIMIT @__p_1 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title"
       LIMIT @__p_1 OFFSET @__p_0
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
@@ -112,66 +152,6 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
       FROM "Books" AS "b"
       ORDER BY "b"."Title"
-      LIMIT @__p_1 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title" DESC
-      LIMIT @__p_1 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title"
-      LIMIT @__p_1 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title"
-      LIMIT @__p_0 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title"
-      LIMIT @__p_1 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title" DESC
-      LIMIT @__p_1 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title" DESC
       LIMIT @__p_1 OFFSET @__p_0
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
