@@ -9,26 +9,32 @@ function BookList() {
     const [pageNum, setPageNum] = useState<number>(1);
     const [totalItems, setTotalItems] = useState<number>(0);
     const [totalPages, setTotalPages] = useState<number>(0);
+    const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
     useEffect(() => {
         const fetchBooks = async () => {
             const response = await fetch(
-                `https://localhost:5000/api/Bookstore/GetBooks?pageSize=${pageSize}&pageNum=${pageNum}`
+                `https://localhost:5000/api/Bookstore/GetBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}`
             );
             const data = await response.json();
             setBooks(data.books);
             setTotalItems(data.totalNumBooks);
-            setTotalPages(Math.ceil(totalItems / pageSize))
+            setTotalPages(Math.ceil(data.totalNumBooks / pageSize));
         };
 
         fetchBooks();
 
-    }, [pageSize, pageNum, totalItems]);
+    }, [pageSize, pageNum, sortOrder]);
 
     return (
         <>
         
-            <h1>Books</h1>
+            <h2>Books</h2>
+            <br />
+            <button onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}>
+                Sort by Title ({sortOrder === "asc" ? "Descending" : "Ascending"})
+            </button>
+            <br />
             <br />
             {books.map((b) => (
                 <div id="bookCard" className="card" key={b.bookId}>
@@ -75,8 +81,6 @@ function BookList() {
                     <option value="20">20</option>
                 </select>
             </label>
-
-
 
         </>
 
