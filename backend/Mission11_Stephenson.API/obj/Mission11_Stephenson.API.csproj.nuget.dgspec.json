@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj": {}
+  },
+  "projects": {
+    "/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj",
+        "projectName": "Mission11_Stephenson.API",
+        "projectPath": "/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj",
+        "packagesPath": "/Users/calebstephenson/.nuget/packages/",
+        "outputPath": "/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/calebstephenson/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet@8/8.0.13/libexec/sdk/8.0.113/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
