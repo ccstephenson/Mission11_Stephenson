@@ -14,9 +14,15 @@ namespace Mission11_Stephenson.API.Controllers
         public BookstoreController(BookstoreContext temp) => _BookContext = temp;
     
         [HttpGet("GetBooks")]
-        public IActionResult GetBooks(int pageSize = 5, int pageNum = 1, string sortOrder = "asc")
+        public IActionResult GetBooks(int pageSize = 5, int pageNum = 1, string sortOrder = "asc", [FromQuery] List<string>? bookTypes = null)
         {
-            IQueryable<Book> booksQuery = _BookContext.Books;
+            var booksQuery = _BookContext.Books.AsQueryable();
+
+            if (bookTypes != null && bookTypes.Any())
+            {
+                booksQuery = booksQuery
+                .Where(b => bookTypes.Contains(b.Category));
+            }
 
             // Apply sorting based on title
             booksQuery = sortOrder.ToLower() == "desc" 
@@ -28,7 +34,7 @@ namespace Mission11_Stephenson.API.Controllers
                 .Take(pageSize)
                 .ToList();
 
-            var totalNumBooks = _BookContext.Books.Count();
+            var totalNumBooks = booksQuery.Count();
 
             var result = new
             {
@@ -37,6 +43,16 @@ namespace Mission11_Stephenson.API.Controllers
             };
 
             return Ok(result);
+        }
+        [HttpGet("GetBookTypes")]
+        public IActionResult GetBookTypes()
+        {
+            var bookTypes = _BookContext.Books
+                .Select(p => p.Category)
+                .Distinct()
+                .ToList();
+            
+            return Ok(bookTypes);
         }
     }
 }

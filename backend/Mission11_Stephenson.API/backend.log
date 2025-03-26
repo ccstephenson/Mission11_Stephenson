@@ -7,62 +7,57 @@ dotnet watch 🔧 Building...
 dotnet watch 🚀 Started
 warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
       The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
-info: Microsoft.Hosting.Lifetime[14]
-      Now listening on: https://localhost:5000
-info: Microsoft.Hosting.Lifetime[14]
-      Now listening on: http://localhost:4000
-info: Microsoft.Hosting.Lifetime[0]
-      Application started. Press Ctrl+C to shut down.
-info: Microsoft.Hosting.Lifetime[0]
-      Hosting environment: Development
-info: Microsoft.Hosting.Lifetime[0]
-      Content root path: /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (5ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+fail: Microsoft.Extensions.Hosting.Internal.Host[11]
+      Hosting failed to start
+      System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+       ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+       ---> System.Net.Sockets.SocketException (48): Address already in use
+         at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationTokeninfo: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
       SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
       FROM "Books" AS "b"
       ORDER BY "b"."Title"
       LIMIT @__p_1 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title"
-      LIMIT @__p_1 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title"
-      LIMIT @__p_1 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title"
-      LIMIT @__p_1 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title"
-      LIMIT @__p_0 OFFSET @__p_0
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
       SELECT COUNT(*)
@@ -83,45 +78,87 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       FROM "Books" AS "b"
       ORDER BY "b"."Title"
       LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFradotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+  Mission11_Stephenson.API -> /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/Mission11_Stephenson.API.dll
+dotnet watch 🚀 Started
+warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
+      The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 35
+fail: Microsoft.Extensions.Hosting.Internal.Host[11]
+      Hosting failed to start
+      System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+       ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+       ---> System.Net.Sockets.SocketException (48): Address already in use
+         at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOdotnet watch ⌚ File changed: ./Controllers/BookstoreController.cs.
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(50,28): error CS0103: The name '_waterContext' does not exist in the current context
+dotnet watch ⌚ File changed: ./Controllers/BookstoreController.cs.
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(50,28): error CS0103: The name '_waterContext' does not exist in the current context
+dotnet watch ⌚ File changed: ./Controllers/BookstoreController.cs.
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(50,32): error CS0103: The name '_waterContext' does not exist in the current context
+dotnet watch ⌚ File changed: ./Controllers/BookstoreController.cs.
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(50,32): error CS0103: The name '_waterContext' does not exist in the current context
+dotnet watch ⌚ File changed: ./Controllers/BookstoreController.cs.
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(50,29): error CS0103: The name '_waterContext' does not exist in the current context
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context
+dotnet watch ⌚ File changed: ./Controllers/BookstoreController.cs.
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(50,29): error CS0103: The name '_bookContext' does not exist in the current context
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context
+dotnet watch ⌚ File changed: ./Controllers/BookstoreController.cs.
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(50,42): error CS1061: 'BookstoreContext' does not contain a definition for 'Projects' and no accessible extension method 'Projects' accepting a first argument of type 'BookstoreContext' could be found (are you missing a using directive or an assembly reference?)
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context
+dotnet watch ⌚ File changed: ./Controllers/BookstoreController.cs.
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(51,32): error CS1061: 'Book' does not contain a definition for 'ProjectType' and no accessible extension method 'ProjectType' accepting a first argument of type 'Book' could be found (are you missing a using directive or an assembly reference?)
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context
+dotnet watch ⌚ File changed: ./Data/Book.cs.
+dotnet watch ⌚ No hot reload changes to apply.
+dotnet watch ⌚ File changed: ./Controllers/BookstoreController.cs.
+dotnet watch ⌚ [40m[31m/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context
+dotnet watch ⌚ File changed: ./Controllers/BookstoreController.cs.
+dotnet watch 🔥 Hot reload of changes succeeded.
+dotnet watch ⌚ File changed: ./Controllers/BookstoreController.cs.
+dotnet watch 🔥 Hot reload of changes succeeded.
+dotnet watch ⌚ File changed: ./Controllers/BookstoreController.cs.
+dotnet watch 🔥 Hot reload of changes succeeded.
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
       SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
       FROM "Books" AS "b"
-      ORDER BY "b"."Title" DESC
-      LIMIT @__p_1 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title" DESC
-      LIMIT @__p_0 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title" DESC
-      LIMIT @__p_1 OFFSET @__p_0
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Books" AS "b"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
-      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
-      FROM "Books" AS "b"
-      ORDER BY "b"."Title" DESC
+      ORDER BY "b"."Title"
       LIMIT @__p_1 OFFSET @__p_0
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
@@ -138,6 +175,16 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       SELECT COUNT(*)
       FROM "Books" AS "b"
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
       SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
       FROM "Books" AS "b"
@@ -147,6 +194,576 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
       SELECT COUNT(*)
       FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__bookTypes_0='?' (Size = 13), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+      ORDER BY "b"."Title"
+      LIMIT @__p_2 OFFSET @__p_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__bookTypes_0='?' (Size = 13)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__bookTypes_0='?' (Size = 24), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+      ORDER BY "b"."Title"
+      LIMIT @__p_2 OFFSET @__p_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__bookTypes_0='?' (Size = 24)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__bookTypes_0='?' (Size = 12), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+      ORDER BY "b"."Title"
+      LIMIT @__p_2 OFFSET @__p_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__bookTypes_0='?' (Size = 12)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__bookTypes_0='?' (Size = 14), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+      ORDER BY "b"."Title"
+      LIMIT @__p_2 OFFSET @__p_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__bookTypes_0='?' (Size = 14)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__bookTypes_0='?' (Size = 26), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+      ORDER BY "b"."Title"
+      LIMIT @__p_2 OFFSET @__p_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__bookTypes_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__bookTypes_0='?' (Size = 14), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+      ORDER BY "b"."Title"
+      LIMIT @__p_2 OFFSET @__p_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__bookTypes_0='?' (Size = 14)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      ORDER BY "b"."Title"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__bookTypes_0='?' (Size = 13), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
+      ORDER BY "b"."Title"
+      LIMIT @__p_2 OFFSET @__p_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__bookTypes_0='?' (Size = 13)], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Books" AS "b"
+      WHERE "b"."Category" IN (
+          SELECT "b0"."value"
+          FROM json_each(@__bookTypes_0) AS "b0"
+      )
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
       SELECT "b"."BookID", "b"."Author", "b"."Category", "b"."Classification", "b"."ISBN", "b"."PageCount", "b"."Price", "b"."Publisher", "b"."Title"
@@ -159,4 +776,693 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       FROM "Books" AS "b"
 
 dotnet watch ❌ Exited with error code 137
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+rs/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(51,32): error CS1061: 'Book' does not contain a definition for 'ProjectType' and no accessible extension method 'ProjectType' accepting a first argument of type 'Book' could be found (are you missing a using directive or an assembly reference?) [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/opt/homebrew/Cellar/dotnet@8/8.0.13/libexec/sdk/8.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(709,5): error NETSDK1177: Failed to sign apphost with error code 1: /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/apphost: No such file or directory [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/opt/homebrew/Cellar/dotnet@8/8.0.13/libexec/sdk/8.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(709,5): error NETSDK1177: ; Exit code: 1 [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+  Mission11_Stephenson.API -> /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/Mission11_Stephenson.API.dll
+dotnet watch 🚀 Started
+warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
+      The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+fail: Microsoft.Extensions.Hosting.Internal.Host[11]
+      Hosting failed to start
+      System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+       ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+       ---> System.Net.Sockets.SocketException (48): Address already in use
+         at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 35
+
+dotnet watch ❌ Exited with error code 134
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+  Mission11_Stephenson.API -> /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/Mission11_Stephenson.API.dll
+dotnet watch 🚀 Started
+warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
+      The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+fail: Microsoft.Extensions.Hosting.Internal.Host[11]
+      Hosting failed to start
+      System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+       ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+       ---> System.Net.Sockets.SocketException (48): Address already in use
+         at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 35
+
+dotnet watch ❌ Exited with error code 134
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+otnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+  Mission11_Stephenson.API -> /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/Mission11_Stephenson.API.dll
+dotnet watch 🚀 Started
+warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
+      The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+fail: Microsoft.Extensions.Hosting.Internal.Host[11]
+      Hosting failed to start
+      System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+       ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+       ---> System.Net.Sockets.SocketException (48): Address already in use
+         at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 35
+
+dotnet watch ❌ Exited with error code 134
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 35
+
+dotnet watch 🔧 Building...
+  Mission11_Stephenson.API -> /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/Mission11_Stephenson.API.dll
+dotnet watch 🚀 Started
+warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
+      The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+fail: Microsoft.Extensions.Hosting.Internal.Host[11]
+      Hosting failed to start
+      System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+       ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+       ---> System.Net.Sockets.SocketException (48): Address already in use
+         at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 35
+
+dotnet watch ❌ Exited with error code 134
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+CSC : error CS2012: Cannot open '/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/Mission11_Stephenson.API.dll' for writing -- 'The process cannot access the file '/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/Mission11_Stephenson.API.dll' because it is being used by another process.' [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+s/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+CSC : error CS2012: Cannot open '/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/Mission11_Stephenson.API.dll' for writing -- 'The process cannot access the file '/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/Mission11_Stephenson.API.dll' because it is being used by another process.' [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+  Mission11_Stephenson.API -> /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/Mission11_Stephenson.API.dll
+dotnet watch 🚀 Started
+warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
+      The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+fail: Microsoft.Extensions.Hosting.Internal.Host[11]
+      Hosting failed to start
+      System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+       ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+       ---> System.Net.Sockets.SocketException (48): Address already in use
+         at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         at Microsoft.AspNetCore.Server.Kestrel.Transpdotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(50,28): error CS0103: The name '_waterContext' does not exist in the current context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(50,32): error CS0103: The name '_waterContext' does not exist in the current context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(50,29): error CS0103: The name '_waterContext' does not exist in the current context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(50,29): error CS0103: The name '_bookContext' does not exist in the current context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(50,42): error CS1061: 'BookstoreContext' does not contain a definition for 'Projects' and no accessible extension method 'Projects' accepting a first argument of type 'BookstoreContext' could be found (are you missing a using directive or an assembly reference?) [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(51,32): error CS1061: 'Book' does not contain a definition for 'ProjectType' and no accessible extension method 'ProjectType' accepting a first argument of type 'Book' could be found (are you missing a using directive or an assembly reference?) [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(51,32): error CS1061: 'Book' does not contain a definition for 'ProjectType' and no accessible extension method 'ProjectType' accepting a first argument of type 'Book' could be found (are you missing a using directive or an assembly reference?) [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(55,23): error CS0103: The name 'projectTypes' does not exist in the current context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+CSC : error CS2012: Cannot open '/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/refint/Mission11_Stephenson.API.dll' for writing -- 'The process cannot access the file '/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/refint/Mission11_Stephenson.API.dll' because it is being used by another process.' [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+  Mission11_Stephenson.API -> /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/Mission11_Stephenson.API.dll
+dotnet watch 🚀 Started
+warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
+      The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+fail: Microsoft.Extensions.Hosting.Internal.Host[11]
+      Hosting failed to start
+      System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+       ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+       ---> System.Net.Sockets.SocketException (48): Address already in use
+         at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 35
+
+dotnet watch ❌ Exited with error code 134
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+  Mission11_Stephenson.API -> /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/Mission11_Stephenson.API.dll
+dotnet watch 🚀 Started
+warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
+      The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+fail: Microsoft.Extensions.Hosting.Internal.Host[11]
+      Hosting failed to start
+      System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+       ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+       ---> System.Net.Sockets.SocketException (48): Address already in use
+         at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 35
+
+dotnet watch ❌ Exited with error code 134
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+nOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 35
+
+dotnet watch ❌ Exited with error code 134
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/opt/homebrew/Cellar/dotnet@8/8.0.13/libexec/sdk/8.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(709,5): error NETSDK1177: Failed to sign apphost with error code 1: /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/apphost: No such file or directory [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/opt/homebrew/Cellar/dotnet@8/8.0.13/libexec/sdk/8.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(709,5): error NETSDK1177: ; Exit code: 1 [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+ckets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 35
+
+dotnet watch ❌ Exited with error code 134
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+  Mission11_Stephenson.API -> /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/Mission11_Stephenson.API.dll
+dotnet watch 🚀 Started
+warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
+      The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+fail: Microsoft.Extensions.Hosting.Internal.Host[11]
+      Hosting failed to start
+      System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+       ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+       ---> System.Net.Sockets.SocketException (48): Address already in use
+         at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 35
+
+dotnet watch ❌ Exited with error code 134
 dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
