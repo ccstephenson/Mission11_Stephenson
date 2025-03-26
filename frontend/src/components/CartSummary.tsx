@@ -18,12 +18,12 @@ const CartSummary = () => {
             alignItems: 'center',
             boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
             fontSize: '16px',        
-            }}
-            onClick={() => navigate('/cart')}
-            >
-                🛒<strong>{totalAmount.toFixed(2)}</strong>
-            </div>
-
+        }}
+        onClick={() => navigate('/cart')}
+        >
+            🛒<strong className="ms-2">${totalAmount.toFixed(2)}</strong>
+            <span className="badge bg-primary rounded-pill ms-2">{cart.length}</span>
+        </div>
     );
 };
 
