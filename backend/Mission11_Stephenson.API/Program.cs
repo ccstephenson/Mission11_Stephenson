@@ -16,7 +16,7 @@ builder.Services.AddDbContext<BookstoreContext>(options =>
 builder.Services.AddCors(options => 
     options.AddPolicy("AllowBookstore",
     policy => {
-        policy.AllowAnyOrigin() // Allow any origin for CORS
+        policy.WithOrigins("https://jolly-mud-0606f931e.6.azurestaticapps.net")
             .AllowAnyMethod()
             .AllowAnyHeader();
     })
