@@ -31,9 +31,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowBookstore");
-
 app.UseHttpsRedirection();
+
+app.UseCors("AllowBookstore");
 
 app.UseAuthorization();
 

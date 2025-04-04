@@ -505,15 +505,12 @@ dotnet watch 🔧 Building...
 /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(70,13): warning CS8602: Dereference of a possibly null reference. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
 /opt/homebrew/Cellar/dotnet@8/8.0.14_1/libexec/sdk/8.0.114/Microsoft.Common.CurrentVersion.targets(5198,5): error MSB3030: Could not copy the file "/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/apphost" because it was not found. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
 dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
- endpoint, AddressBindContext context, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
-         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
-         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(70,13): warning CS8602: Dereference of a possibly null reference. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+CSC : error CS2012: Cannot open '/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/Mission11_Stephenson.API.dll' for writing -- 'The process cannot access the file '/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/Mission11_Stephenson.API.dll' because it is being used by another process.' [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+`1 exceptions, Func`3 operation)
 Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
  ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
  ---> System.Net.Sockets.SocketException (48): Address already in use
@@ -627,69 +624,9 @@ dotnet wdotnet watch 🔧 Buil/Users/calebstephenson/Desktop/Mission11_Stephenso
 dotnet watch 🚀 Started
 warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
       The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
-fail: Microsoft.Extensions.Hosting.Internal.Host[11]
-      Hosting failed to start
-      System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
-       ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
-       ---> System.Net.Sockets.SocketException (48): Address already in use
-         at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
-         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
-         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
-         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
-         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
-         --- End of inner exception stack trace ---
-         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
-         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
-      --- End of stack trace from previous location ---
-         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
-         --- End of inner exception stack trace ---
-         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
-         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
-         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
-Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
- ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
- ---> System.Net.Sockets.SocketException (48): Address already in use
-   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
-   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
-   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
-   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
-   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
-   --- End of inner exception stack trace ---
-   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
-   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
-   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
-   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
-   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
-   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
-   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
-   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
-   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
-   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
-   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 42
-
-dotnet watch ❌ Exited with error code 134
-dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
-dotnet watch 🔧 Building...
+fail: Microsoft.Extensions.Hosting.Intedotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(70,13): warning CS8602: Dereference of a possibly null reference. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
   Mission11_Stephenson.API -> /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/Mission11_Stephenson.API.dll
 dotnet watch 🚀 Started
 warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
@@ -756,7 +693,67 @@ Unhandled exception. System.IO.IOException: Failed to bind to address https://12
 
 dotnet watch ❌ Exited with error code 134
 dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
-he ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+estrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+         at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+         at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+Unhandled exception. System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 42
+
+dotnet watch ❌ Exited with error code 134
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(70,13): warning CS8602: Dereference of a possibly null reference. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+  Mission11_Stephenson.API -> /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/Mission11_Stephenson.API.dll
+dotnet watch 🚀 Started
+warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
+      The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
 fail: Microsoft.Extensions.Hosting.Internal.Host[11]
       Hosting failed to start
       System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
@@ -809,40 +806,30 @@ Unhandled exception. System.IO.IOException: Failed to bind to address https://12
    at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
    at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
    at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
-   at Microsoft.Extensidotnet watch 🔧 Building...
-/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs(19,16): error CS0119: 'CorsPolicyBuilder.AllowAnyOrigin()' is a method, which is not valid in the given context [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
-/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
-/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(70,13): warning CS8602: Dereference of a possibly null reference. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 42
+
+dotnet watch ❌ Exited with error code 134
 dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
-dotnet watch 🔧 Building...
-/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
-/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(70,13): warning CS8602: Dereference of a possibly null reference. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+son.API.csproj]
 CSC : error CS2012: Cannot open '/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/Mission11_Stephenson.A/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csdotnet watch ⏳ Waiting for a file to change before restarting dotnet...
-1_Stephenson.API/Controllers/BookstoreController.cs(70,13): warning CS8602: Dereference of a possibly null reference. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
-  Mission11_Stephenson.API -> /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/Mission11_Stephenson.API.dll
-dotnet watch 🚀 Started
-warn: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer[8]
-      The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
-fail: Microsoft.Extensions.Hosting.Internal.Host[11]
-      Hosting failed to start
-      System.IO.IOException: Failed to bind to address https://127.0.0.1:5000: address already in use.
-       ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
-       ---> System.Net.Sockets.SocketException (48): Address already in use
-         at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
-         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
-         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
-         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
-         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
-         --- End of inner exception stack trace ---
-         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
-         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
-      --- End of stack trace from previous location ---
-         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
-         --- End of inner exception stack trace ---
-         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(70,13): warning CS8602: Dereference of a possibly null reference. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/opt/homebrew/Cellar/dotnet@8/8.0.14_1/libexec/sdk/8.0.114/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(709,5): error NETSDK1177: Failed to sign apphost with error code 1: /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/apphost: is already signed [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/opt/homebrew/Cellar/dotnet@8/8.0.14_1/libexec/sdk/8.0.114/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(709,5): error NETSDK1177: ; Exit code: 1 [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+n.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(70,13): warning CS8602: Dereference of a possibly null reference. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/opt/homebrew/Cellar/dotnet@8/8.0.14_1/libexec/sdk/8.0.114/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(709,5): error NETSDK1177: Failed to sign apphost with error code 1: /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/apphost: No such file or directory [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/opt/homebrew/Cellar/dotnet@8/8.0.14_1/libexec/sdk/8.0.114/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(709,5): error NETSDK1177: ; Exit code: 1 [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+ken)
          at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
          at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
          at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
@@ -896,17 +883,12 @@ fail: Microsoft.Extensions.Hosting.Internal.Host[11]
        ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
        ---> System.Net.Sockets.SocketException (48): Address already in use
          at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
-         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
-         at System.Net.Sockets.Socket.Bind(EndPoint localEP)
-         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
-         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
-         --- End of inner exception stack trace ---
-         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
-         at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
-         at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
-      --- End of stack trace from previous location ---
-         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+         at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress sdotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(70,13): warning CS8602: Dereference of a possibly null reference. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/opt/homebrew/Cellar/dotnet@8/8.0.14_1/libexec/sdk/8.0.114/Microsoft.Common.CurrentVersion.targets(5198,5): error MSB3030: Could not copy the file "/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/apphost" because it was not found. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+text, CancellationToken cancellationToken)
          --- End of inner exception stack trace ---
          at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
          at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
@@ -951,4 +933,9 @@ Unhandled exception. System.IO.IOException: Failed to bind to address https://12
    at Program.<Main>$(String[] args) in /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Program.cs:line 42
 
 dotnet watch ❌ Exited with error code 134
+dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
+dotnet watch 🔧 Building...
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(24,48): warning CS8604: Possible null reference argument for parameter 'item' in 'bool List<string>.Contains(string item)'. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Controllers/BookstoreController.cs(70,13): warning CS8602: Dereference of a possibly null reference. [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
+CSC : error CS2012: Cannot open '/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/Mission11_Stephenson.API.dll' for writing -- 'The process cannot access the file '/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/Mission11_Stephenson.API.dll' because it is being used by another process.' [/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/Mission11_Stephenson.API.csproj]
 dotnet watch ⏳ Waiting for a file to change before restarting dotnet...
