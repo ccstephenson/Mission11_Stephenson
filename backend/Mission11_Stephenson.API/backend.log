@@ -613,9 +613,11 @@ Unhandled exception. System.IO.IOException: Failed to bind to address https://12
       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
       SELECT DISTINCT "b"."Category"
       FROM "Books" AS "b"
-ancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
-   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT DISTINCT "b"."Category"
+      FROM "Books" AS "b"
+HostedService service, CancellationToken token)
    at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
    at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>g__LogAndRethrow|15_3(<>c__DisplayClass15_0&)
    at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)

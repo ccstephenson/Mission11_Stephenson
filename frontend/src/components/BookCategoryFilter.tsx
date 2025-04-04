@@ -13,7 +13,7 @@ function CategoryFilter({
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await fetch('https://localhost:5000/api/Bookstore/GetBookTypes');
+                const response = await fetch('https://mission13-stephenson-backend-akgphedjbgfxcmbm.eastus-01.azurewebsites.net/api/bookstore/GetBookTypes');
                 const data = await response.json();
                 console.log('Fetched Categories', data)
     
