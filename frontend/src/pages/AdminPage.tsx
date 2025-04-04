@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchBooks, deleteBook } from '../api/BooksAPI';
 import NewBookForm from '../components/NewBookForm';
 import EditBookForm from '../components/EditBookForm';
@@ -47,21 +47,6 @@ const AdminBooksPage = () => {
 
     const handleEdit = (book: Book) => {
         setEditingBook(book);
-    };
-
-    const handleAddBook = () => {
-        setEditingBook({
-            bookId: 0,
-            title: '',
-            author: '',
-            publisher: '',
-            isbn: '',
-            classification: '',
-            category: '',
-            pageCount: 0,
-            price: 0
-        });
-        setShowForm(true);
     };
 
     if (loading) return <p>Loading projects...</p>;

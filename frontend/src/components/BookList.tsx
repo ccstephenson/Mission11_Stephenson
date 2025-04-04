@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import {Book} from '../types/Book'
-import { useNavigate } from "react-router-dom"
 import { useCart } from "../context/CartContext";
 import * as bootstrap from "bootstrap";
-import NewBookForm from '../components/NewBookForm'
-import { deleteBook, fetchBooks } from "../api/BooksAPI";
-import EditBookForm from "./EditBookForm";
+import { fetchBooks } from "../api/BooksAPI";
 import Pagination from './Pagination';
 
 function BookList({selectedCategories}: {selectedCategories: string[]}) {
@@ -20,19 +17,16 @@ function BookList({selectedCategories}: {selectedCategories: string[]}) {
     const [pageNum, setPageNum] = useState<number>(1);
 
     // Total number of books available
-    const [totalItems, setTotalItems] = useState<number>(0);
+    const [, setTotalItems] = useState<number>(0);
 
     // Total number of pages calculated based on total books and pageSize
     const [totalPages, setTotalPages] = useState<number>(0);
-    const [showForm, setShowForm] = useState(false);
-    const [editingBook, setEditingBook] = useState<Book | null>(null);
     
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
 
     // Sorting order for book titles (ascending or descending)
     const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
-    const navigate = useNavigate();
     const { addToCart } = useCart();
     const handleAddToCart = (book: Book) => {
         const newItem = {
