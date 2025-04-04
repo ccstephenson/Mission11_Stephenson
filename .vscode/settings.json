@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/e04e025b-bb41-4127-9a0e-6cdc2c76892a/resourceGroups/appsvc_windows_eastus/providers/Microsoft.Web/sites/Mission13-Stephenson-Backend",
+    "appService.deploySubpath": "backend/Mission11_Stephenson.API/publish"
+}
