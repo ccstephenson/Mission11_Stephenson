@@ -133,3 +133,8 @@
 /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/Mission11_Stephenson.API.pdb
 /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/Mission11_Stephenson.API.genruntimeconfig.cache
 /Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/obj/Debug/net8.0/ref/Mission11_Stephenson.API.dll
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/publish/web.config
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/publish/appsettings.Development.json
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/publish/appsettings.json
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/publish/Mission11_Stephenson.API.deps.json
+/Users/calebstephenson/Desktop/Mission11_Stephenson/backend/Mission11_Stephenson.API/bin/Debug/net8.0/publish/Mission11_Stephenson.API.runtimeconfig.json
