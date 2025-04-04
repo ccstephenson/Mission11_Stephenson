@@ -14,7 +14,7 @@ namespace Mission11_Stephenson.API.Controllers
         public BookstoreController(BookstoreContext temp) => _BookContext = temp;
     
         [HttpGet("GetBooks")]
-        public IActionResult GetBooks(int pageSize = 5, int pageNum = 1, string sortOrder = "asc", [FromQuery] List<string>? bookTypes = null)
+        public IActionResult GetBooks([FromQuery(Name = "pageHowMany")] int pageSize = 5, int pageNum = 1, string sortOrder = "asc", [FromQuery] List<string>? bookTypes = null)
         {
             var booksQuery = _BookContext.Books.AsQueryable();
 
@@ -53,6 +53,50 @@ namespace Mission11_Stephenson.API.Controllers
                 .ToList();
             
             return Ok(bookTypes);
+        }
+        [HttpPost("AddBook")]
+        public IActionResult AddBook([FromBody] Book newBook)
+        {
+            _BookContext.Books.Add(newBook);
+            _BookContext.SaveChanges();
+            return Ok(newBook);
+        }
+
+        [HttpPut("UpdateBook/{bookId}")]
+        public IActionResult UpdateProject(int bookId, [FromBody] Book updatedBook)
+        {
+            var existingBook = _BookContext.Books.Find(bookId);
+
+            existingBook.Title = updatedBook.Title;
+            existingBook.Author = updatedBook.Author;
+            existingBook.Publisher = updatedBook.Publisher;
+            existingBook.Isbn = updatedBook.Isbn;
+            existingBook.Classification = updatedBook.Classification;
+            existingBook.Category = updatedBook.Category;
+            existingBook.PageCount = updatedBook.PageCount;
+            existingBook.Price = updatedBook.Price;
+        
+            _BookContext.Books.Update(existingBook);
+            _BookContext.SaveChanges();
+        
+            return Ok(existingBook);
+
+        }
+
+        [HttpDelete("DeleteBook/{bookId}")]
+        public IActionResult DeleteProject(int bookId)
+        {
+            var book = _BookContext.Books.Find(bookId);
+
+            if (book == null)
+            {
+                return NotFound(new {message = "Book not found"});
+            }
+
+            _BookContext.Books.Remove(book);
+            _BookContext.SaveChanges();
+
+            return NoContent();
         }
     }
 }

@@ -36,7 +36,7 @@ function CategoryFilter({
 
     return (
         <div className="category-filter">
-            <h5>Project Types</h5>
+            <h5>Book Types</h5>
             <div className="category-list">
                 {categories.map((c) => (
                     <div key={c} className="category-item">
