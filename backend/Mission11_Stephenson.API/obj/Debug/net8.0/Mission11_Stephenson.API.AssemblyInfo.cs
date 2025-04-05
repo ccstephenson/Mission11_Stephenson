@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mission11_Stephenson.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e8c4feef3606d1553a4af582441ac172d8eabff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe5bb50c1540cf3b318d63757f54d5f4291f5900")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mission11_Stephenson.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mission11_Stephenson.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

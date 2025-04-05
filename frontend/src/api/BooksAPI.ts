@@ -10,7 +10,8 @@ const API_URL = 'https://mission13-stephenson-backend-akgphedjbgfxcmbm.eastus-01
 export const fetchBooks = async (
     pageSize: number,
     pageNum: number,
-    selectedCategories: string[]
+    selectedCategories: string[],
+    sortOrder: "asc" | "desc"
 ): Promise<FetchBooksResponse> => {
     try {
         const categoryParams = selectedCategories
@@ -18,7 +19,7 @@ export const fetchBooks = async (
         .join(`&`);
 
         const response = await fetch(
-            `${API_URL}/GetBooks?pageHowMany=${pageSize}&pageNum=${pageNum}${selectedCategories.length ? `&${categoryParams}` : ''}`
+            `${API_URL}/GetBooks?pageHowMany=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}${selectedCategories.length ? `&${categoryParams}` : ''}`
         );
 
         if (!response.ok) {
@@ -30,7 +31,6 @@ export const fetchBooks = async (
         console.error('Error fetching books: ', error);
         throw error;
     }
-
 };
 
 export const addBook = async (newBook: Book): Promise<Book> => {

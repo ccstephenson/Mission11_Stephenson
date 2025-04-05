@@ -29,12 +29,12 @@ namespace Mission11_Stephenson.API.Controllers
                 ? booksQuery.OrderByDescending(b => b.Title) 
                 : booksQuery.OrderBy(b => b.Title);
 
+            var totalNumBooks = booksQuery.Count();
+
             var paginatedBooks = booksQuery
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
-
-            var totalNumBooks = booksQuery.Count();
 
             var result = new
             {
