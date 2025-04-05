@@ -18,7 +18,7 @@ const AdminBooksPage = () => {
     useEffect(() => {
         const loadBooks = async () => {
             try {
-                const booksData = await fetchBooks(pageSize, pageNum, []);
+                const booksData = await fetchBooks(pageSize, pageNum, [], "asc"); // Fetch books with default sort order 'asc'
                 setBooks(booksData.books);
                 setTotalPages(Math.ceil(booksData.totalNumBooks / pageSize));
             } catch (error) {
@@ -69,7 +69,7 @@ const AdminBooksPage = () => {
                 <NewBookForm 
                     onSuccess={() => {
                         setShowForm(false);
-                        fetchBooks(pageSize, pageNum, []).then((data) => setBooks(data.books));
+                        fetchBooks(pageSize, pageNum, [], "asc").then((data) => setBooks(data.books));
                     }}
                     onCancel={() => setShowForm(false)}
                 />
@@ -80,7 +80,7 @@ const AdminBooksPage = () => {
                     book={editingBook} 
                     onSuccess={() => {
                         setEditingBook(null);
-                        fetchBooks(pageSize, pageNum, []).then((data) => setBooks(data.books));
+                        fetchBooks(pageSize, pageNum, [], "asc").then((data) => setBooks(data.books));
                     }}
                     onCancel={() => setEditingBook(null)}
                 />
