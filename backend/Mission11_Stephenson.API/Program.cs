@@ -16,11 +16,12 @@ builder.Services.AddDbContext<BookstoreContext>(options =>
 builder.Services.AddCors(options => 
     options.AddPolicy("AllowBookstore",
     policy => {
-        policy.WithOrigins("https://jolly-mud-0606f931e.6.azurestaticapps.net")
+        policy.WithOrigins("https://jolly-mud-0606f931e.6.azurestaticapps.net/")
             .AllowAnyMethod()
             .AllowAnyHeader();
     })
 );
+Console.WriteLine("CORS policy 'AllowBookstore' configured.");
 
 var app = builder.Build();
 
@@ -34,6 +35,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors("AllowBookstore");
+Console.WriteLine("CORS middleware applied.");
 
 app.UseAuthorization();
 
